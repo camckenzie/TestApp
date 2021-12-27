@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { StyleSheet, Button, View, Text, TextInput, Alert,} from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 export default function LoginScreen({ navigation }) {
@@ -56,8 +57,18 @@ export default function LoginScreen({ navigation }) {
           title="Login"
           onPress={() => login()}
         />
+
+        <TouchableOpacity
+            onpress={() => {
+                navigation.navigate('Signup');
+            }}
+        >
+            <Text style={{ textAlign: 'center', color: '#004d99', fontWeight: 'bold', fontSize: 15 }}>Signup</Text>
+        </TouchableOpacity>
       </View>
     );
+
+
 }
 
 const styles = StyleSheet.create({
